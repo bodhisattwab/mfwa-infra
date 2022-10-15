@@ -1,0 +1,14 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/#nodeport
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirstwebapp-external-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: web
+  ports:
+    - port: 80         # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+      targetPort: 80   # Optional field.
+      
+ 
